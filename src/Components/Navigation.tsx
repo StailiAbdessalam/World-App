@@ -11,6 +11,5 @@ const Navigation = () => {
       </NavLink>
     </div>
   );
-}; 
-
+};
 export default Navigation;

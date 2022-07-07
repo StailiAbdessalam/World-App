@@ -10,10 +10,10 @@ a{
     &::after{
         content: '';
         width: 85%;
-        height: 5px;
+        height: 2px;
         background-color: $color-1;
         position: absolute;
-        bottom: 1px;
+        bottom: 7px;
         left: 50%;
         transform: translate(-50%);
     }
