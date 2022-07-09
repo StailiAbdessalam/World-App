@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import Card from "./Card";
 import { useState, useEffect } from "react";
 
 const Contries = () => {
@@ -13,8 +13,8 @@ const Contries = () => {
   return (
     <div className="countries">
       <ul className="countries-list">
-        {data.map((country:any)=>(
-         <li>{country.name}</li>
+        {data.map((country: any) => (
+          <Card country={country}  key={country.name.common}/>
         ))}
       </ul>
     </div>
