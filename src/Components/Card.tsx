@@ -1,6 +1,12 @@
+
 const Card = (props: any) => {
   const { country } = props;
-  console.log(country);
+
+const numberFormat = (x:any)=>{
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+
 
   return (
     <li className="card">
@@ -9,7 +15,7 @@ const Card = (props: any) => {
             <ul>
                 <li>{country.name.common}</li>
                 <li>{country.capital}</li>
-                <li>Pop . {country.population}</li>
+                <li>Pop . {numberFormat(country.population)}</li>
             </ul>
         </div>
     </li>
