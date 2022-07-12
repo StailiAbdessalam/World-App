@@ -1,13 +1,9 @@
-
 const Card = (props: any) => {
   const { country } = props;
 
 const numberFormat = (x:any)=>{
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
-
-
-
   return (
     <li className="card">
         <img src={country.flags.png} alt="" />

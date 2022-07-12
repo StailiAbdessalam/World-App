@@ -9,6 +9,7 @@ const Contries = () => {
   const [rangeValue, setRangeValue]: any = useState(40);
   const [selectedRadio, setSelectedRadio] = useState("");
   const radios = ["Africa", "America", "Asia", "Europe", "Oceania"];
+
   useEffect(() => {
     if (playOnce) {
       axios.get("https://restcountries.com/v3.1/all").then((res) => {
@@ -16,7 +17,6 @@ const Contries = () => {
         settPlayOnce(false);
       });
     }
-
     const sortedCountry = () => {
       const countryObj = Object.keys(data).map((i) => data[i]);
       const sortedArray = countryObj.sort((a, b) => {
@@ -30,8 +30,8 @@ const Contries = () => {
 
   return (
     <div className="countries">
+      <label htmlFor="">{rangeValue}</label>
       <div className="sort-container">
-        {/* <label htmlFor="">{rangeValue}</label> */}
         <input
           type="range"
           min="1"
@@ -40,6 +40,8 @@ const Contries = () => {
           onChange={(e: any) => setRangeValue(e.target.value)}
         />
         <ul>
+
+
           {radios.map((radio) => {
             return (
               <li key={radio}>
@@ -50,11 +52,12 @@ const Contries = () => {
                   checked={radio == selectedRadio}
                   onChange={(e) => setSelectedRadio(e.target.value)}
                 />
-
                 <label htmlFor={radio}>{radio}</label>
               </li>
             );
           })}
+
+
         </ul>
       </div>
       <div className="cancel">
@@ -64,8 +67,7 @@ const Contries = () => {
       </div>
       <ul className="countries-list">
         {sortedData
-          .filter((country: any) => country.region.includes(selectedRadio)
-          )
+          .filter((country: any) => country.region.includes(selectedRadio))
           .map((country: any) => (
             <Card country={country} key={country.name.common} />
           ))}
