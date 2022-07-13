@@ -28,6 +28,9 @@ const Contries = () => {
     sortedCountry();
   }, [data, playOnce, rangeValue]);
 
+
+
+  
   return (
     <div className="countries">
       <label htmlFor="">{rangeValue}</label>
